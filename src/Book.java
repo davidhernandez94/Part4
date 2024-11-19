@@ -50,14 +50,76 @@ public class Book {
         String name = "";
         name += this.title.substring(0,1).toUpperCase();
         for (int i = 1; i < this.title.length(); i++) {
-            if (this.title.substring(i - 1, i) == " ") {
+            if (this.title.charAt(i - 1) == ' ') {
                 name += this.title.substring(i, i + 1).toUpperCase();
             }
             else {
-                name += this.title.substring(i, i + 1);
+                name += this.title.charAt(i);
             }
         }
         this.title = name;
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-15s: %s\n%-15s: %s\n%-15s: %f\n" +
+                "%-15s: %s\n%-15s: %s\n", "Title", this.title,
+                "Author", this.author, "Price", this.price,
+                "Publisher", this.publisher, "ISBN", this.isbn);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o.getClass() == this.getClass()) {
+            return false;
+        }
+        Book book = (Book) o;
+        return book.toString().equals(this.toString());
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    public double getPrice() {
+        return this.price;
+    }
+
+    public String getPublisher() {
+        return this.publisher;
+    }
+
+    public String getIsbn() {
+        return this.isbn;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 }
