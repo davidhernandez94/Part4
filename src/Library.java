@@ -4,10 +4,14 @@ public class Library {
     private ArrayList<Book> books = new ArrayList<>();
 
     public Library() {
-        for (int i = 0; i < 5; i++) {
-
-            this.books.add(new Book());
-        }
+        this.books.add(new Book("crime and punishment", "fyodor dostoyevsky",
+                9.99, "penguin", "???"));
+        this.books.add(new Book("the idiot", "fyodor dostoyevsky",
+                9.99, "penguin", "???"));
+        this.books.add(new Book("the castle", "franz kafka",
+                9.99, "penguin", "???"));
+        this.books.add(new Book());
+        this.books.add(new Book("Amerika"));
     }
 
     public Library(ArrayList<Book> list) {

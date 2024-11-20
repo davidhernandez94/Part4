@@ -6,11 +6,12 @@ public class Book {
     private String isbn;
 
     public Book() {
-        this.title = "the trial";
+        this.title = "The Trial";
         this.author = "Franz Kafka";
         this.price = 10.99;
         this.publisher = "Penguin";
         this.isbn = "???";
+
     }
 
     public Book(String title) {
@@ -19,6 +20,7 @@ public class Book {
         this.price = 10.99;
         this.publisher = "Penguin";
         this.isbn = "???";
+        this.toTitleCase();
     }
 
     public Book(String name, String writer, double money,
@@ -28,6 +30,7 @@ public class Book {
         this.price = money;
         this.publisher = house;
         this.isbn = code;
+        this.toTitleCase();
     }
 
     public Book(Book book) {
@@ -63,7 +66,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return String.format("%-15s: %s\n%-15s: %s\n%-15s: %f\n" +
+        return String.format("%-15s: %s\n%-15s: %s\n%-15s: %.2f\n" +
                 "%-15s: %s\n%-15s: %s\n", "Title", this.title,
                 "Author", this.author, "Price", this.price,
                 "Publisher", this.publisher, "ISBN", this.isbn);
