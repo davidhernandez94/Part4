@@ -39,6 +39,7 @@ public class Book {
         this.price = book.price;
         this.publisher = book.publisher;
         this.isbn = book.isbn;
+        this.toTitleCase();
     }
 
     public int checkIsbnStatus() {
